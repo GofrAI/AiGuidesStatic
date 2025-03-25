@@ -2,31 +2,31 @@
 
 
 
-// {
-//   "name": "static-site",
-//   "version": "1.0.0",
-//   "description": "Static website",
-//   "scripts": {
-//     "build": "mkdir -p .vercel/output/static && cp index.html .vercel/output/static/"
-//   },
-//   "private": false
-// }
-
 {
-  "name": "nextjs-static-site",
+  "name": "static-site",
   "version": "1.0.0",
-  "private": true,
+  "description": "Static website",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "build": "mkdir -p .vercel/output/static && cp index.html .vercel/output/static/"
   },
-  "dependencies": {
-    "next": "^14.0.0",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
-  },
-  "devDependencies": {
-    "fs-extra": "^11.2.0"
-  }
+  "private": false
 }
+
+// {
+//   "name": "nextjs-static-site",
+//   "version": "1.0.0",
+//   "private": true,
+//   "scripts": {
+//     "dev": "next dev",
+//     "build": "next build",
+//     "start": "next start"
+//   },
+//   "dependencies": {
+//     "next": "^14.0.0",
+//     "react": "^18.0.0",
+//     "react-dom": "^18.0.0"
+//   },
+//   "devDependencies": {
+//     "fs-extra": "^11.2.0"
+//   }
+// }
