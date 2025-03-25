@@ -1,9 +1,13 @@
+
+
+
+
 {
-  "name": "static-cloudflare-site",
+  "name": "static-site",
   "version": "1.0.0",
-  "description": "Static website for Cloudflare Pages",
-  "private": true,
+  "description": "Static website",
   "scripts": {
-    "build": "echo 'No build step needed for static site'"
-  }
+    "build": "mkdir -p .vercel/output/static && cp index.html .vercel/output/static/"
+  },
+  "private": false
 }
