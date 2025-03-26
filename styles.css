@@ -26,7 +26,7 @@ body {
 }
 
 header {
-    display: fixed;
+    display: flex;
     align-items: center;
     margin-bottom: 20px;
 }
