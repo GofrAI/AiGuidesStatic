@@ -3,65 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Cloudflare Pages Site</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" type="image/png" href="images/favicon.png">
+    <title>Project Directory</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <a href="/">My Site</a>
-            </div>
-            <ul class="nav-links">
-                <li><a href="/">Home</a></li>
-                <li><a href="/about.html">About</a></li>
-                <li><a href="/contact.html">Contact</a></li>
-                <li><a href="/conversation-markdown.md">View our conversation</a></li>
-                
-                
-                
-                
+    <div class="container">
+        <header>
+            <img src="public/logo.png" alt="Company Logo" class="logo">
+            <h1>Project Directory Tree</h1>
+        </header>
+        
+        <nav class="directory-tree">
+            <ul>
+                <li>
+                    <strong>Project Root</strong>
+                    <ul>
+                        <li>
+                            <a href="#">public/</a>
+                            <ul>
+                                <li><a href="#">logo.png</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">index.html</a></li>
+                        <li><a href="#">styles.css</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
-    </header>
-    
-    <main>
-        <section class="hero">
-            <div class="container">
-                <h1>Welcome to My Cloudflare Pages Site</h1>
-                <p>This is a template for your static website hosted on Cloudflare Pages.</p>
-                <a href="#" class="btn">Learn More</a>
-            </div>
-        </section>
-        
-        <section class="features">
-            <div class="container">
-                <h2>Features</h2>
-                <div class="feature-grid">
-                    <div class="feature">
-                        <h3>Fast</h3>
-                        <p>Delivered via Cloudflare's global network for optimal performance.</p>
-                    </div>
-                    <div class="feature">
-                        <h3>Simple</h3>
-                        <p>Easy to deploy and maintain with automatic builds from GitHub.</p>
-                    </div>
-                    <div class="feature">
-                        <h3>Secure</h3>
-                        <p>Automatic HTTPS and security features from Cloudflare.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 My Site. All rights reserved.</p>
-        </div>
-    </footer>
-    
-    <script src="js/main.js"></script>
+    </div>
 </body>
 </html>
