@@ -1,0 +1,61 @@
+/* Global styles */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-image: url('/public/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #2575fc; /* Fallback color */
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: rgba(255, 255, 255, 0.97);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    max-width: 100px;
+    margin-right: 20px;
+}
+
+.footer {
+    max-width: 800px !important;
+    margin-right: 20px;
+}
+
+.directory-tree ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.directory-tree > ul {
+    padding-left: 0;
+}
+
+.directory-tree a {
+    color: #333;
+    text-decoration: none;
+}
+
+.directory-tree a:hover {
+    color: #007bff;
+    text-decoration: underline;
+}
