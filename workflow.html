@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Workflow</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .workflow-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .workflow-table th, 
+        .workflow-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        .workflow-table th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        .workflow-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .error-message {
+            color: red;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="workflow-container">
+        <h1>Project Workflow</h1>
+        <div id="workflow-content"></div>
+    </div>
+
+    <script>
+        async function loadWorkflow() {
+            const workflowContent = document.getElementById('workflow-content');
+            
+            try {
+                // Fetch the CSV file
+                const response = await fetch('workflow.csv');
+                
+                // Check if the response is ok
+                if (!response.ok) {
+                    throw new Error('Could not fetch workflow.csv');
+                }
+                
+                // Get the text content of the CSV
+                const csvText = await response.text();
+                
+                // Parse the CSV
+                const rows = csvText.split('\n').map(row => row.split(','));
+                
+                // Remove any empty rows
+                const filteredRows = rows.filter(row => row.some(cell => cell.trim() !== ''));
+                
+                // Create table
+                const table = document.createElement('table');
+                table.className = 'workflow-table';
+                
+                // Create table header
+                const thead = document.createElement('thead');
+                const headerRow = document.createElement('tr');
+                filteredRows[0].forEach(headerText => {
+                    const th = document.createElement('th');
+                    th.textContent = headerText.trim();
+                    headerRow.appendChild(th);
+                });
+                thead.appendChild(headerRow);
+                table.appendChild(thead);
+                
+                // Create table body
+                const tbody = document.createElement('tbody');
+                filteredRows.slice(1).forEach(rowData => {
+                    const tr = document.createElement('tr');
+                    rowData.forEach(cellText => {
+                        const td = document.createElement('td');
+                        td.textContent = cellText.trim();
+                        tr.appendChild(td);
+                    });
+                    tbody.appendChild(tr);
+                });
+                table.appendChild(tbody);
+                
+                // Add table to the content div
+                workflowContent.appendChild(table);
+            } catch (error) {
+                // Display error message
+                const errorDiv = document.createElement('div');
+                errorDiv.className = 'error-message';
+                errorDiv.textContent = `Error loading workflow: ${error.message}`;
+                workflowContent.appendChild(errorDiv);
+                console.error('Workflow loading error:', error);
+            }
+        }
+
+        // Load workflow when the page loads
+        document.addEventListener('DOMContentLoaded', loadWorkflow);
+    </script>
+</body>
+</html>

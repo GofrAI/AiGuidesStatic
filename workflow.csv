@@ -1,0 +1,8 @@
+Step,Format
+1. Place Prompt-filter (PF),CSV
+2. Place a Question (Q),CSV
+3. Send (Q) + (PF) to deep-research LLM,CSV
+4. Receive Answer (A),CSV
+5. Send (A) to formatting LLM (F-LLM),
+6. Receive Publication (P),PDF
+7. Publish On static website,Link to PDF
